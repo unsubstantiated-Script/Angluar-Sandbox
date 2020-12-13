@@ -15,7 +15,7 @@ import { User } from '../../models/user.model';
 })
 export class UserComponent implements OnInit {
   //Properties
-  user: User;
+  user!: User;
 
   //Methods
   constructor() {}
