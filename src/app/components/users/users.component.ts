@@ -11,6 +11,7 @@ export class UsersComponent implements OnInit {
   users!: User[];
   showExtended: boolean = true;
   loaded: boolean = false;
+  enableAdd: boolean = true;
 
   constructor() {}
 
@@ -28,6 +29,7 @@ export class UsersComponent implements OnInit {
           state: 'NH',
           zip: 990033,
         },
+        image: 'https://picsum.photos/id/1/600/600',
       },
       {
         firstName: 'Shelly',
@@ -39,6 +41,7 @@ export class UsersComponent implements OnInit {
           state: 'ID',
           zip: 86056,
         },
+        image: 'https://picsum.photos/id/2/600/600',
       },
       {
         firstName: 'Snidley',
@@ -50,23 +53,24 @@ export class UsersComponent implements OnInit {
           state: 'ON',
           zip: 885599,
         },
+        image: 'https://picsum.photos/id/44/600/600',
       },
     ];
     this.loaded = true;
 
     this.showExtended = true;
 
-    this.addUser({
-      firstName: 'Greenley',
-      lastName: 'Nerdles',
-      age: 55,
-      address: {
-        street: '221B Smellish St.',
-        city: 'New Brunswick',
-        state: 'ON',
-        zip: 885599,
-      },
-    });
+    // this.addUser({
+    //   firstName: 'Greenley',
+    //   lastName: 'Nerdles',
+    //   age: 55,
+    //   address: {
+    //     street: '221B Smellish St.',
+    //     city: 'New Brunswick',
+    //     state: 'ON',
+    //     zip: 885599,
+    //   },
+    // });
   }
 
   addUser(user: User) {
