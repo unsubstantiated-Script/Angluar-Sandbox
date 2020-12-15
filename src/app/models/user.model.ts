@@ -1,7 +1,7 @@
 export interface User {
   firstName: string;
   lastName: string;
-  age: number;
+  age?: number;
   address: {
     street: string;
     city: string;
@@ -9,4 +9,7 @@ export interface User {
     zip: number;
   };
   image?: string;
+  isActive?: boolean;
+  balance?: number;
+  registered?: any;
 }

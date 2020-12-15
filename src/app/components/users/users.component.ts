@@ -12,6 +12,8 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
+  currentClasses = {};
+  currentStyles = {};
 
   constructor() {}
 
@@ -30,6 +32,9 @@ export class UsersComponent implements OnInit {
           zip: 990033,
         },
         image: 'https://picsum.photos/id/1/600/600',
+        isActive: true,
+        balance: 33.44,
+        registered: new Date('11/22/2020 12:34:00'),
       },
       {
         firstName: 'Shelly',
@@ -42,6 +47,9 @@ export class UsersComponent implements OnInit {
           zip: 86056,
         },
         image: 'https://picsum.photos/id/2/600/600',
+        isActive: true,
+        balance: 56.4,
+        registered: new Date('10/02/2019 01:38:00'),
       },
       {
         firstName: 'Snidley',
@@ -54,11 +62,17 @@ export class UsersComponent implements OnInit {
           zip: 885599,
         },
         image: 'https://picsum.photos/id/44/600/600',
+        isActive: false,
+        balance: 555.88,
+        registered: new Date('03/14/2017 01:40:00'),
       },
     ];
     this.loaded = true;
 
-    this.showExtended = true;
+    // this.showExtended = true;
+
+    this.setCurrentClasses();
+    this.setCurrentStyles();
 
     // this.addUser({
     //   firstName: 'Greenley',
@@ -75,5 +89,19 @@ export class UsersComponent implements OnInit {
 
   addUser(user: User) {
     this.users.push(user);
+  }
+
+  setCurrentClasses() {
+    this.currentClasses = {
+      'btn-success': this.enableAdd,
+      'big-text': this.showExtended,
+    };
+  }
+
+  setCurrentStyles() {
+    this.currentStyles = {
+      'padding-top': this.showExtended ? '0' : '40px',
+      'font-size': this.showExtended ? ' ' : '4rem',
+    };
   }
 }
