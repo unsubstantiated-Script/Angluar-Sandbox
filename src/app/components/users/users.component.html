@@ -8,7 +8,7 @@
       <div class="form-group">
         <label>First Name</label>
         <input
-          (keydown)="fireEvent($event)"
+          [(ngModel)]="user.firstName"
           type="text"
           class="form-control"
           name="firstName"
@@ -17,7 +17,7 @@
       <div class="form-group">
         <label>Last Name</label>
         <input
-          (keydown)="fireEvent($event)"
+          [(ngModel)]="user.lastName"
           type="text"
           class="form-control"
           name="lastName"
@@ -26,7 +26,7 @@
       <div class="form-group">
         <label>Age</label>
         <input
-          (keydown)="fireEvent($event)"
+          [(ngModel)]="user.age"
           type="number"
           class="form-control"
           name="age"
@@ -35,7 +35,7 @@
       <div class="form-group">
         <label>Street Address</label>
         <input
-          (keydown)="fireEvent($event)"
+          [(ngModel)]="user.address.street"
           type="text"
           class="form-control"
           name="street"
@@ -44,7 +44,7 @@
       <div class="form-group">
         <label>City</label>
         <input
-          (keydown)="fireEvent($event)"
+          [(ngModel)]="user.address.city"
           type="text"
           class="form-control"
           name="city"
@@ -53,7 +53,7 @@
       <div class="form-group">
         <label>State</label>
         <input
-          (keydown)="fireEvent($event)"
+          [(ngModel)]="user.address.state"
           type="text"
           class="form-control"
           name="state"
@@ -62,22 +62,15 @@
       <div class="form-group">
         <label>Zip</label>
         <input
-          (keydown)="fireEvent($event)"
+          [(ngModel)]="user.address.zip"
           type="number"
           class="form-control"
           name="zip"
         />
       </div>
       <button
-        (click)="
-          addUser({
-            firstName: 'Mary',
-            lastName: 'Jones',
-            isActive: true,
-            hide: true
-          })
-        "
-        [disabled]="!enableAdd"
+        (click)="addUser()"
+        [disabled]="user.firstName === '' || user.lastName === ''"
         class="btn btn-block btn-light mb-3"
       >
         Add New User
